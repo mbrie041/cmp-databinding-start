@@ -1,5 +1,7 @@
 import {
   Component,
+  ContentChild,
+  ElementRef,
   Input,
   OnChanges,
   OnInit,
@@ -15,6 +17,7 @@ import {
 })
 export class ServerElementComponent implements OnInit, OnChanges {
   @Input("srvElement") element: { type: string; name: string; content: string };
+  @ContentChild("contentParagraph", { static: true }) paragraph: ElementRef;
 
   constructor() {
     console.log("constructor called");
